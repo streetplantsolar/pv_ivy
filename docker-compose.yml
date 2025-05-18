@@ -1,0 +1,64 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15
+    restart: always
+    env_file:
+      - ./backend/.env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "6666:6666"
+
+  redis:
+    image: redis:7
+    restart: always
+    ports:
+      - "6379:6379"
+
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+    env_file:
+      - ./backend/.env
+    command: sh -c "celery -A config worker --loglevel=info & python manage.py runserver 0.0.0.0:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  celery_worker:
+    build:
+      context: ./backend
+    command: celery -A config worker --loglevel=info
+    depends_on:
+      - redis
+      - db
+    env_file:
+      - ./backend/.env
+
+  celery_beat:
+    build:
+      context: ./backend
+    command: celery -A config beat --loglevel=info
+    depends_on:
+      - redis
+      - db
+    env_file:
+      - ./backend/.env
