@@ -2,11 +2,11 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy the root-level requirements.txt
-COPY ./requirements.txt /app/requirements.txt
+# Copy the root-level requirements.txt to /app
+COPY ../requirements.txt /app/requirements.txt
 
-# Copy the entire backend folder to /app
-COPY ./backend /app
+# Copy the backend folder contents to /app
+COPY . /app
 
 RUN pip install --upgrade pip
 RUN pip install -r /app/requirements.txt
