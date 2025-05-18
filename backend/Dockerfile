@@ -3,7 +3,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Copy the root-level requirements.txt to /app
-COPY ../requirements.txt /app/requirements.txt
+COPY ./requirements.txt /app/requirements.txt
 
 # Copy the backend folder contents to /app
 COPY . /app
