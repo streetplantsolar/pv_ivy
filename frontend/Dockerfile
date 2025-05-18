@@ -1,10 +1,13 @@
-FROM node:18
+FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY ./ /app
+COPY ./frontend /app
 
-RUN npm install
-RUN npm run build
+RUN pip install --upgrade pip
+RUN pip install -r /app/requirements.txt
 
-CMD ["npx", "serve", "-s", "build", "-l", "3000"]
+ENV PYTHONUNBUFFERED=1
+ENV DJANGO_SETTINGS_MODULE=config.settings
+
+CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
