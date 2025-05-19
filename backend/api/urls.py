@@ -7,4 +7,5 @@ urlpatterns = [
     path('auth/login/', obtain_auth_token, name='login'),
     path('iv-data/upload/', views.IVDataUploadView.as_view(), name='iv_data_upload'),
     path('diagnostics/', views.DiagnosticsView.as_view(), name='diagnostics'),
+    path('api/', include('api.urls'))
 ]
