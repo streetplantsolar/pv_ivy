@@ -1,19 +1,19 @@
 FROM python:3.11-slim
 
-# Set the working directory to the backend folder
+# Set working directory to backend
 WORKDIR /backend
 
-# Copy only the requirements.txt file
+# Copy the root-level requirements.txt to /backend
 COPY ../requirements.txt /backend/requirements.txt
 
 # Install dependencies
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Copy the entire backend folder
+# Copy backend contents to /backend
 COPY . /backend
 
-# Environment Variables
+# Set environment variables
 ENV PYTHONUNBUFFERED=1
 ENV DJANGO_SETTINGS_MODULE=config.settings
 
