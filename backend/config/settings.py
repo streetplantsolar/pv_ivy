@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'backend.api',
+    'home'
 ]
 
 # Custom User Model
