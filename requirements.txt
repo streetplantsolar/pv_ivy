@@ -7,4 +7,4 @@ stripe
 gunicorn
 psycopg2-binary
 python-dotenv
-python-corsheaders
+django-cors-headers
