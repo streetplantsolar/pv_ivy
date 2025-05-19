@@ -8,7 +8,7 @@ from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from .models import User, IVCurveData, DiagnosticReport
-from .serializers import RegisterSerializer, IVDataSerializer, DiagnosticReportSerializer
+from .serializers import UserSerializer, RegisterSerializer, IVDataSerializer, DiagnosticReportSerializer
 from .tasks import process_iv_data_task
 
 class RegisterView(APIView):
