@@ -1,0 +1,272 @@
+<!-- templates/home/landing_page.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Navbar Section -->
+<header class="bg-white shadow-md py-4">
+  <div class="container mx-auto flex justify-between items-center px-4">
+    <div class="text-lg font-bold">IVcurves</div>
+    <nav class="space-x-6">
+      <a href="#" class="text-gray-700 hover:text-blue-500">Features</a>
+      <a href="#" class="text-gray-700 hover:text-blue-500">Pricing</a>
+      <a href="#" class="text-gray-700 hover:text-blue-500">Blog</a>
+      <a href="#" class="text-gray-700 hover:text-blue-500">Help</a>
+      <a href="#" class="text-gray-700 hover:text-blue-500">IVcurves.com</a>
+    </nav>
+    <div>
+      <a href="/login" class="text-blue-500 px-4 py-2 border border-blue-500 rounded mr-2">Log In</a>
+      <a href="/signup" class="bg-blue-500 text-white px-4 py-2 rounded">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="bg-gray-100 py-16">
+  <div class="container mx-auto text-center px-4">
+    <h1 class="text-4xl font-bold text-gray-800 mb-4">Start Your Free Trial</h1>
+    <p class="text-lg text-gray-600 mb-8">Analyze, compare, and detect anomalies in your solar panel data with ease.</p>
+    <a href="/signup" class="bg-blue-500 text-white px-6 py-3 rounded">Get Started for Free</a>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Analyze & Compare</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-gray-100 p-6 text-center rounded shadow">
+        <h3 class="text-xl font-semibold mb-2">Data Analysis</h3>
+        <p class="text-gray-600">Upload and analyze your solar data effortlessly.</p>
+      </div>
+      <div class="bg-gray-100 p-6 text-center rounded shadow">
+        <h3 class="text-xl font-semibold mb-2">Comparison Reports</h3>
+        <p class="text-gray-600">Compare data across multiple datasets.</p>
+      </div>
+      <div class="bg-gray-100 p-6 text-center rounded shadow">
+        <h3 class="text-xl font-semibold mb-2">Warranty Evaluation</h3>
+        <p class="text-gray-600">Assess warranty compliance and performance.</p>
+      </div>
+      <div class="bg-gray-100 p-6 text-center rounded shadow">
+        <h3 class="text-xl font-semibold mb-2">Anomaly Detection</h3>
+        <p class="text-gray-600">Detect anomalies and receive actionable insights.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Plans Section -->
+<section class="bg-gray-100 py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Pricing Plans</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Basic Plan -->
+      <div class="bg-white p-6 text-center rounded shadow">
+        <h3 class="text-xl font-semibold mb-4">Basic</h3>
+        <p class="text-2xl font-bold mb-4">$0/month</p>
+        <p class="text-gray-600 mb-6">Includes basic analysis and diagnostics</p>
+        <a href="/signup" class="bg-blue-500 text-white px-6 py-3 rounded">Get Started</a>
+      </div>
+      <!-- Professional Plan -->
+      <div class="bg-white p-6 text-center rounded shadow">
+        <h3 class="text-xl font-semibold mb-4">Professional</h3>
+        <p class="text-2xl font-bold mb-4">$49/month</p>
+        <p class="text-gray-600 mb-6">Advanced analytics and comparison reports</p>
+        <a href="/signup" class="bg-blue-500 text-white px-6 py-3 rounded">Get Started</a>
+      </div>
+      <!-- Enterprise Plan -->
+      <div class="bg-white p-6 text-center rounded shadow">
+        <h3 class="text-xl font-semibold mb-4">Enterprise</h3>
+        <p class="text-2xl font-bold mb-4">Contact Us</p>
+        <p class="text-gray-600 mb-6">Custom solutions and API access</p>
+        <a href="/signup" class="bg-blue-500 text-white px-6 py-3 rounded">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Signup Form Section -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-6">Get Started for Free</h2>
+    <p class="text-gray-600 mb-8">Sign up now and start analyzing your solar data.</p>
+    <form action="/signup" method="POST" class="max-w-lg mx-auto">
+      <div class="mb-4">
+        <input type="text" name="full_name" placeholder="Full Name" class="w-full p-3 border border-gray-300 rounded" required>
+      </div>
+      <div class="mb-4">
+        <input type="email" name="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded" required>
+      </div>
+      <div class="mb-4">
+        <input type="password" name="password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded" required>
+      </div>
+      <div class="mb-6">
+        <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-gray-800 py-8 text-white">
+  <div class="container mx-auto px-4 text-center">
+    <div class="mb-4">
+      <a href="#" class="text-gray-400 hover:text-white mx-2">Privacy Policy</a>
+      <a href="#" class="text-gray-400 hover:text-white mx-2">Terms of Service</a>
+      <a href="#" class="text-gray-400 hover:text-white mx-2">Contact Us</a>
+    </div>
+    <p class="text-gray-500">&copy; 2025 IVcurves. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Tailwind CSS Styling Update -->
+
+<!-- Navbar Section -->
+<header class="bg-blue-600 py-4 shadow-md">
+  <div class="container mx-auto flex justify-between items-center px-4">
+    <div class="text-2xl font-bold text-white">IVcurves</div>
+    <nav class="space-x-6">
+      <a href="#" class="text-white hover:text-gray-200">Features</a>
+      <a href="#" class="text-white hover:text-gray-200">Pricing</a>
+      <a href="#" class="text-white hover:text-gray-200">Blog</a>
+      <a href="#" class="text-white hover:text-gray-200">Help</a>
+      <a href="#" class="text-white hover:text-gray-200">IVcurves.com</a>
+    </nav>
+    <div>
+      <a href="/login" class="text-blue-500 bg-white px-4 py-2 rounded mr-2">Log In</a>
+      <a href="/signup" class="bg-white text-blue-600 px-4 py-2 rounded">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="bg-gray-50 py-20">
+  <div class="container mx-auto text-center px-4">
+    <h1 class="text-5xl font-bold text-blue-600 mb-6">Start Your Free Trial</h1>
+    <p class="text-lg text-gray-600 mb-10">Analyze, compare, and detect anomalies in your solar panel data with ease.</p>
+    <a href="/signup" class="bg-blue-600 text-white px-8 py-3 rounded-lg">Get Started for Free</a>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12 text-blue-600">Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div class="bg-blue-50 p-8 text-center rounded shadow-lg">
+        <h3 class="text-xl font-semibold mb-2 text-blue-600">Data Analysis</h3>
+        <p class="text-gray-600">Upload and analyze your solar data effortlessly.</p>
+      </div>
+      <div class="bg-blue-50 p-8 text-center rounded shadow-lg">
+        <h3 class="text-xl font-semibold mb-2 text-blue-600">Comparison Reports</h3>
+        <p class="text-gray-600">Compare data across multiple datasets.</p>
+      </div>
+      <div class="bg-blue-50 p-8 text-center rounded shadow-lg">
+        <h3 class="text-xl font-semibold mb-2 text-blue-600">Warranty Evaluation</h3>
+        <p class="text-gray-600">Assess warranty compliance and performance.</p>
+      </div>
+      <div class="bg-blue-50 p-8 text-center rounded shadow-lg">
+        <h3 class="text-xl font-semibold mb-2 text-blue-600">Anomaly Detection</h3>
+        <p class="text-gray-600">Detect anomalies and receive actionable insights.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Plans Section -->
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold text-blue-600 mb-12">Pricing Plans</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="bg-white p-8 rounded shadow-lg">
+        <h3 class="text-xl font-semibold mb-4">Basic</h3>
+        <p class="text-3xl font-bold mb-6">$0/month</p>
+        <p class="text-gray-600 mb-6">Basic analysis and diagnostics.</p>
+        <a href="/signup" class="bg-blue-600 text-white px-6 py-2 rounded-lg">Get Started</a>
+      </div>
+      <div class="bg-white p-8 rounded shadow-lg">
+        <h3 class="text-xl font-semibold mb-4">Professional</h3>
+        <p class="text-3xl font-bold mb-6">$49/month</p>
+        <p class="text-gray-600 mb-6">Advanced analytics and reports.</p>
+        <a href="/signup" class="bg-blue-600 text-white px-6 py-2 rounded-lg">Get Started</a>
+      </div>
+      <div class="bg-white p-8 rounded shadow-lg">
+        <h3 class="text-xl font-semibold mb-4">Enterprise</h3>
+        <p class="text-3xl font-bold mb-6">Contact Us</p>
+        <p class="text-gray-600 mb-6">Custom solutions and API access.</p>
+        <a href="/signup" class="bg-blue-600 text-white px-6 py-2 rounded-lg">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Signup Form Section -->
+<section class="bg-blue-600 py-16">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold text-white mb-6">Get Started for Free</h2>
+    <form id="signupForm" class="max-w-lg mx-auto bg-white p-8 rounded shadow-lg">
+      <div class="mb-4">
+        <input type="text" name="full_name" placeholder="Full Name" class="w-full p-3 border border-gray-300 rounded mb-2" required>
+      </div>
+      <div class="mb-4">
+        <input type="email" name="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded mb-2" required>
+      </div>
+      <div class="mb-4">
+        <input type="password" name="password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded mb-2" required>
+      </div>
+      <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg">Sign Up</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-gray-800 py-8 text-white">
+  <div class="container mx-auto px-4 text-center">
+    <div class="mb-4">
+      <a href="#" class="text-gray-400 hover:text-white mx-2">Privacy Policy</a>
+      <a href="#" class="text-gray-400 hover:text-white mx-2">Terms of Service</a>
+      <a href="#" class="text-gray-400 hover:text-white mx-2">Contact Us</a>
+    </div>
+    <p class="text-gray-500">&copy; 2025 IVcurves. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('signupForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const fullName = document.querySelector('input[name="full_name"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const password = document.querySelector('input[name="password"]').value;
+
+    try {
+      const response = await fetch('/api/auth/register/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          full_name: fullName,
+          email: email,
+          password: password
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.status === 201) {
+        alert('User registered successfully.');
+        window.location.href = '/login';
+      } else {
+        alert('Error: ' + JSON.stringify(data));
+      }
+
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while registering. Please try again.');
+    }
+  });
+</script>
+
+{% endblock %}
