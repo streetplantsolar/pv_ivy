@@ -1,17 +1,21 @@
 FROM python:3.11-slim
 
-WORKDIR /app
+# Set the working directory to the backend folder
+WORKDIR /backend
 
-# Copy the root-level requirements.txt to /app
-COPY ../requirements.txt /app/requirements.txt
+# Copy only the requirements.txt file
+COPY ../requirements.txt /backend/requirements.txt
 
-# Copy the entire backend folder to /app
-COPY . /app
-
+# Install dependencies
 RUN pip install --upgrade pip
-RUN pip install -r /app/requirements.txt
+RUN pip install -r requirements.txt
 
+# Copy the entire backend folder
+COPY . /backend
+
+# Environment Variables
 ENV PYTHONUNBUFFERED=1
-ENV DJANGO_SETTINGS_MODULE=backend.config.settings
+ENV DJANGO_SETTINGS_MODULE=config.settings
 
-CMD ["gunicorn", "backend.config.wsgi:application", "--bind", "0.0.0.0:8000"]
+# Start the application using Gunicorn
+CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
