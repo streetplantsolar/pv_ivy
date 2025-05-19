@@ -28,6 +28,12 @@ INSTALLED_APPS = [
     'backend.api',
 ]
 
+# Custom User Model
+AUTH_USER_MODEL = 'api.User'
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
